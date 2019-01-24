@@ -1,6 +1,6 @@
 # jianyun
 
-建云基于springboot构建，集成了mail，jasperreports报表，feign，redis, dubbo, kafka, hdfs, hbase, elaticjob, elasticSearch, mybaits常用的框架，方便后续使用，
+jianyun基于springboot构建，集成了mail，jasperreports报表，feign，redis, dubbo, kafka, hdfs, hbase, elaticjob, elasticSearch, mybaits常用的框架，方便后续使用，
 快速开发，后面会持续集成一些常用的框架。
 框架分了6个模块：
  <modules>
