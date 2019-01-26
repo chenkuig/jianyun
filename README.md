@@ -52,4 +52,5 @@ CREATE TABLE `t_cust` (
   UNIQUE KEY `cust_mobile` (`cust_mobile`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='客户信息表';
 #DruidDataSourceAutoConfigure针对com.alibaba.druid.pool.DruidDataSource取消自动配置@EnableAutoConfiguration(exclude={DruidDataSourceAutoConfigure.class})
+#备注;sharding-sphere不能与分页插件pagehelper-spring-boot-starter及tk.mybatis兼容，测试时只能mark掉有关部分
 
