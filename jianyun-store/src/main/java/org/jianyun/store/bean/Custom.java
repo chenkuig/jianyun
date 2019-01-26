@@ -1,4 +1,4 @@
-package com.example.demo.bean;
+package org.jianyun.store.bean;
 
 import java.io.Serializable;
 

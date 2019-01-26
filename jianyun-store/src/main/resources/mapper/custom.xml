@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.mapper.CusterMapper">
-  <resultMap id="BaseResultMap" type="com.example.demo.bean.Custom">
+<mapper namespace="org.jianyun.store.mapper.CusterMapper">
+  <resultMap id="BaseResultMap" type="org.jianyun.store.bean.Custom">
       <id column="cust_id" jdbcType="BIGINT" property="id" />
 	  <result column="cust_name"	jdbcType="VARCHAR"	        property="custName" />
 	  <result column="cust_mobile"	jdbcType="VARCHAR"		    property="custMobile" />

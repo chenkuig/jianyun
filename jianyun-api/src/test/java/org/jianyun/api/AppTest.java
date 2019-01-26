@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.jianyun.producer.kafka.ProducerTest;
 import org.jianyun.store.bean.Country;
+import org.jianyun.store.bean.Custom;
+import org.jianyun.store.mapper.CusterMapper;
 import org.jianyun.store.respfores.CountrySearchRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,6 +33,8 @@ public class AppTest {
 	    private String topic ;
 	    @Value("${kafka.topic.groupid}")
 	    private String groupId;
+		@Autowired
+		private CusterMapper custerMapper;
 	    @Test
 	    public void sendSimpleMail() throws Exception {
 	        SimpleMailMessage message = new SimpleMailMessage();
@@ -62,4 +66,12 @@ public class AppTest {
 		public void pushMessage(){
 	    	producerTest.sendMessage(topic, "welcome to kafka!");
 	    }
+		@Test
+		public void test() {
+			List<Custom> result = custerMapper.getList();
+			System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+			result.forEach(custom->{
+				System.out.println(custom.getCustName());
+			});
+		}
 }

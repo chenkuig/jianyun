@@ -39,3 +39,17 @@ jianyun基于springboot构建，集成了mail，jasperreports报表，feign，re
 3.hbase.properties文件：
 hbase.zk.host=localhost
 hbase.zk.port=2181
+
+
+sharding-sphere
+#数据库建表sql(对ds0与ds1数据库分别创建t_cust0与t_cust1表)
+CREATE TABLE `t_cust` ( 
+  `cust_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+  `cust_name` varchar(10) DEFAULT NULL COMMENT '客户姓名',
+  `cust_mobile` varchar(11) NOT NULL COMMENT '用户手机号',
+  `gender` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`cust_id`),
+  UNIQUE KEY `cust_mobile` (`cust_mobile`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COMMENT='客户信息表';
+#DruidDataSourceAutoConfigure针对com.alibaba.druid.pool.DruidDataSource取消自动配置@EnableAutoConfiguration(exclude={DruidDataSourceAutoConfigure.class})
+

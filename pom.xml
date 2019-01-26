@@ -10,12 +10,14 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<project.build.locale>zh_CN</project.build.locale>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-cloud.version>Greenwich.RC2</spring-cloud.version>
 		<jianyun.version>1.0.1</jianyun.version>
 		<dubbo.version>2.6.5</dubbo.version>
 		<junit-version>4.12</junit-version>
 		<spring-boot.version>2.1.2.RELEASE</spring-boot.version>
-		<sharding-sphere.version>2.0.0.M1</sharding-sphere.version>
+		<sharding-sphere.version>3.0.0.M1</sharding-sphere.version>
 		<spring.hadoop.version>2.5.0.RELEASE</spring.hadoop.version>
 		<hadoop.version>2.6.0</hadoop.version>
 		<hbase.version>0.98.5-hadoop2</hbase.version>
@@ -291,6 +293,19 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+        <!--shardingsphere-->
+        <!-- for spring boot 数据分片，读写分离-->
+        <dependency>
+            <groupId>io.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+            <version>${sharding-sphere.version}</version>
+        </dependency>
+        <!-- for spring boot 分布式事物-->
+        <dependency>
+            <groupId>io.shardingsphere</groupId>
+            <artifactId>sharding-transaction-spring</artifactId>
+            <version>3.1.0</version>
+        </dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -348,6 +363,32 @@
 	            <type>pom</type>
 	            <scope>import</scope>
 	        </dependency>
+			<!--shardingsphere-->
+			<!-- for spring boot 数据分片，读写分离-->
+			<!--<dependency>
+				<groupId>io.shardingsphere</groupId>
+				<artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+				<version>${sharding-sphere.version}</version>
+			</dependency>-->
+
+			<!-- for spring boot 数据治理-->
+			<!--<dependency>
+				<groupId>io.shardingsphere</groupId>
+				<artifactId>sharding-jdbc-orchestration-spring-boot-starter</artifactId>
+				<version>${sharding-sphere.version}</version>
+			</dependency>-->
+
+			<!--若使用zookeeper, 请加入下面Maven坐标-->
+			<!--<dependency>
+				<groupId>io.shardingsphere</groupId>
+				<artifactId>sharding-orchestration-reg-zookeeper-curator</artifactId>
+				<version>${sharding-sphere.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.shardingsphere</groupId>
+				<artifactId>sharding-transaction-spring-boot-starter</artifactId>
+				<version>${sharding-sphere.version}</version>
+			</dependency>-->
 		</dependencies>
 	</dependencyManagement>
 
